@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-"""Starts a Flask web application.
 
-The application listens on 0.0.0.0, port 5000.
+"""
+Starts a Flask web application.
+
+The web application listens on 0.0.0.0, port 5000.
 Routes:
     /: Displays 'Hello HBNB!'.
     /hbnb: Displays 'HBNB'.
     /c/<text>: Displays 'C' followed by the value of <text>.
 """
+
 from flask import Flask
 
 app = Flask(__name__)
@@ -28,7 +31,7 @@ def hbnb():
 def c(text):
     """Displays 'C' followed by the value of <text>."""
     text = text.replace("_", " ")
-    return "C {}".format(text)
+    return f"C {text}"
 
 
 if __name__ == "__main__":
